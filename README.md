@@ -128,6 +128,6 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## Author
 
-- Your Name
+-Abhishek
 
 Feel free to extend or modify the application as needed. Contributions are welcome!
