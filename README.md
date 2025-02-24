@@ -1,20 +1,25 @@
 ![](https://github.com/abh2050/postgres_repo_creation/blob/main/pic2.jpg)
+
 # University Data Entry Application
 
-This application allows users to add and manage university data using a web interface built with Streamlit. It interfaces with a PostgreSQL database using SQLAlchemy for managing data storage.
+This application allows users to add and manage university data using a web interface built with **Streamlit**. It interfaces with a **PostgreSQL database** using **SQLAlchemy** for managing data storage.
 
 ![](https://github.com/abh2050/postgres_repo_creation/blob/main/pic.png)
+
 ## Database Table Creation and Data Insertion
 
-https://univdataentry.streamlit.app/
+[Access the application here](https://univdataentry.streamlit.app/)
 
 ### `create_table` Function
+
 This function dynamically generates a SQL `CREATE TABLE` statement based on the structure of a pandas DataFrame. It sets appropriate SQL data types for each column and handles auto-incrementing primary keys for specified columns.
 
 ### `generate_insert_statements` Function
+
 Generates a series of `INSERT INTO` statements to populate a SQL table with data from a pandas DataFrame. Each row of the DataFrame is converted into a corresponding SQL insert statement, ensuring that the data types are appropriately handled for SQL execution.
 
-### Usage Example
+### 📌 Usage Example
+
 ```python
 import pandas as pd
 
@@ -36,9 +41,13 @@ print(create_table_sql)
 insert_statements = generate_insert_statements(df, table_name)
 for statement in insert_statements:
     print(statement)
-## Database Table: `univ`
+```
 
-This table is designed to store data related to universities. It is hosted on Supabase and structured as follows:
+---
+
+## 🏛️ Database Table: `univ`
+
+This table is designed to store data related to universities. It is hosted on **Supabase** and structured as follows:
 
 ### Table Schema
 
@@ -55,79 +64,86 @@ This table is designed to store data related to universities. It is hosted on Su
 | `academic_programs`  | Descriptions of academic programs offered | `text` | `text`   |
 | `rankings`           | Ranking information of the university | `bigint` | `int8`   |
 
-### Data Handling and Operations
+### 🔹 Data Handling and Operations
 
-- **Creating the Table**: The table should reflect the structure described above. If creating the table programmatically, adjustments for data types and primary keys (e.g., using `SERIAL` for `id`) should be considered.
+- **Creating the Table**: The table should reflect the structure described above. Adjustments for data types and primary keys (e.g., using `SERIAL` for `id`) should be considered when creating the table programmatically.
 - **Inserting Data**: Utilize functions such as `generate_insert_statements` to batch insert data into this table from a pandas DataFrame.
 - **Data Retrieval and Updates**: Standard SQL queries can be used for retrieving and updating records in this table.
-- **Database Management and Security**: Secure management of database credentials and access is crucial, especially when using cloud-hosted platforms like Supabase. Supabase is an open-source alternative to Firebase, providing developers with a suite of tools to rapidly build and scale their applications. It offers a combination of tools and services that mirror Firebase's capabilities but leverages PostgreSQL as its backend database, which allows for more complex queries and relational data structures.
+- **Database Management and Security**: Secure management of database credentials and access is crucial, especially when using cloud-hosted platforms like **Supabase**.
 
-### Example Usage
+---
 
-The table is utilized in web applications for managing university data, allowing users to input and modify records which are then reflected in the database. This setup is ideal for administrative portals where regular data updates are necessary.
-
-## Features
+## 🔧 Features
 
 - **Data Entry Form**: Enter details about universities including name, city, state, country, founding year, number of students, tuition fees, academic programs, and rankings.
-- **Database Integration**: Utilizes SQLAlchemy for ORM with PostgreSQL for robust data storage.
+- **Database Integration**: Utilizes **SQLAlchemy** for ORM with **PostgreSQL** for robust data storage.
 - **Session Management**: Manages database sessions to ensure data integrity and connection efficiency.
 
-## How to Run Locally
+---
 
-### Prerequisites
+## 🚀 How to Run Locally
 
-- Python 3.6+
-- PostgreSQL database
-- Virtual environment (recommended)
+### 📌 Prerequisites
 
-### Installation
+- **Python 3.6+**
+- **PostgreSQL database**
+- **Virtual environment** (recommended)
 
-1. Clone the repository:
-   ```
+### 📥 Installation
+
+1. **Clone the repository**:
+   ```bash
    git clone <repository-url>
    cd <repository-directory>
    ```
 
-2. Install required packages:
-   ```
+2. **Install required packages**:
+   ```bash
    pip install -r requirements.txt
    ```
 
-### Database Setup
+### 🏗️ Database Setup
 
 - **For Local Database:**
-  - Ensure you have PostgreSQL installed and create a database named `abhi_db`.
-  - Modify the `DATABASE_URL` in the script to your local database settings, e.g., `postgresql://postgres:your_password@localhost/abhi_db`.
+  - Ensure **PostgreSQL** is installed and create a database named `abhi_db`.
+  - Modify the `DATABASE_URL` in the script to your local database settings, e.g.,  
+    ```plaintext
+    postgresql://postgres:your_password@localhost/abhi_db
+    ```
 
 - **For Remote Database:**
   - Set up your remote PostgreSQL instance and ensure you have the credentials.
-  - Replace the `DATABASE_URL` with your remote database URL and credentials.
+  - Replace the `DATABASE_URL` with your **remote database URL** and credentials.
   - Optionally, store your database password in `pass.txt` and modify the script to read from it if you prefer not to hardcode passwords.
 
-### Running the Application
+### ▶️ Running the Application
 
 To start the application, execute:
 
-```
+```bash
 streamlit run your_script_name.py
 ```
 
 Navigate to `http://localhost:8501` in your web browser to use the app.
 
-## Deployment
+---
 
-The application is deployed on Streamlit Sharing. Access it here:
+## 🌍 Deployment
 
-[University Data Entry App](https://univdataentry.streamlit.app/)
+The application is **deployed on Streamlit Sharing**.  
+Access it here:  
+🔗 [University Data Entry App](https://univdataentry.streamlit.app/)
 
+---
 
+## 📜 License
 
-## License
+This project is open source and available under the **[MIT License](LICENSE)**.
 
-This project is open source and available under the [MIT License](LICENSE).
+---
 
-## Author
+## ✨ Author
 
--Abhishek
+**Abhishek**  
 
-Feel free to extend or modify the application as needed. Contributions are welcome!
+Feel free to **extend or modify** the application as needed. Contributions are welcome! 🚀
